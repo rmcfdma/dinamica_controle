@@ -1,0 +1,38 @@
+
+{% extends 'artigos/home.html' %}
+
+{% block middle %} 
+    Lista dos sistemas rotacionais
+    <ul>
+        <li>
+          Pêndulo Simples
+          <ul>
+            <li>Definição</li>
+            <li><a href="{% url 'modelagem_pendulo_simples_lagrange'%}">Lagrange</a></li>
+            <li><a href="{% url 'modelagem_pendulo_simples_newton'%}">2ª Lei de Newton</a></li></li>
+            <li>Animação</li>
+          </ul>
+        </li>
+        <li>
+            Pêndulo Duplo
+            <ul>
+              <li>Definição</li>
+              <li><a href="{% url 'modelagem_pendulo_duplo'%}">Lagrange</a></li>
+              <li>Teoremas Cinemáticos</li>
+              <li>Newton Euler</li>
+              <li>Animação</li>
+            </ul>
+        </li>
+        <li>
+            2 Pêndulos conectados por mola
+            <ul>
+              <li>Definição</li>
+              <li><a href="{% url 'modelagem_2_pendulos_conectados_por_mola'%}">Lagrange</a></li>
+              <li>Teoremas Cinemáticos</li>
+              <li>Newton Euler</li>
+              <li>Animação</li>
+            </ul>
+        </li>
+      </ul>
+{% endblock %}
+    

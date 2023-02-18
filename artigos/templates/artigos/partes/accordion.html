@@ -1,0 +1,47 @@
+
+<div class="accordion-wrapper">
+  <div class="accordion">
+    <a class="link_externo" href="{% url 'home' %}">Home</a>
+  </div>
+  <div class="accordion">
+    <input class="input" type="radio" name="radio-a" id="check1">
+    <label class="accordion-label" for="check1">Modelagem</label>
+    <div class="accordion-content">
+      <p><a class="link_interno" href="{% url 'modelagem_sistemas_translacionais' %}">Sistemas Translacionais</a></p>
+      <p><a class="link_interno" href="{% url 'modelagem_sistemas_rotacionais' %}">Sistemas Rotacionais</a></p>
+      <p><a class="link_interno" href="{% url 'modelagem_sistemas_hibridos' %}">Sistemas Híbridos</a></p>
+    </div>
+  </div>
+  <div class="accordion">
+    <input class="input" type="radio" name="radio-a" id="check2">
+    <label class="accordion-label" for="check2">Animações</label>
+    <div class="accordion-content">
+        <p><a class="link_interno" href="#">Matlab</a></p>
+        <p><a class="link_interno" href="{% url 'animacoes' %}">VPython</a></p>
+    </div>
+  </div>
+  <div class="accordion">
+    <input class="input" type="radio" name="radio-a" id="check3">
+    <label class="accordion-label" for="check3">Código</label>
+    <div class="accordion-content">
+        <p><a class="link_interno" href="#">Matlab</a></p>
+        <p><a class="link_interno" href="#">Python</a></p>
+    </div>
+  </div>
+  <div class="accordion">
+    <input class="input" type="radio" name="radio-a" id="check4">
+    <label class="accordion-label" for="check4">Controle</label>
+    <div class="accordion-content">
+        <p><a class="link_interno" href="#">LQR</a></p>
+        <p><a class="link_interno" href="#">LQG</a></p>
+    </div>
+  </div>
+  <div class="accordion">
+    <input class="input"  type="radio" name="radio-a" id="check5">
+    <label class="accordion-label" for="check5">Sobre</label>
+    <div class="accordion-content">
+        <p><a class="link_interno" href="#">Quem Somos</a></p>
+        <p><a class="link_interno" href="#">Contato</a></p>
+    </div>
+  </div>
+</div>

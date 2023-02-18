@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+h1{
+    text-align: center;
+    font-style: italic;
+    /* margin: auto; */
+    width: 600px;
+ }
+
+.principal{
+    background: cyan;
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0px;
+ }
+
+ .top{
+    background: gray;
+    height: 150px;
+}
+
+.center{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    background: yellow;
+}
+
+.left{
+    background: blue;
+    width: 250px;
+}
+
+.middle{
+    background: white;
+    width: 590px;
+    
+}
+
+.right{
+    background: red;
+    width: 250px;
+}
+
+.botton{
+    background: black;
+    height: 150px;
+
+}
+
+
+.middle p{
+    width: 100%;
+    text-indent: 2em;
+    text-align: justify;
+    /* text-justify: inter-word; */
+}
+
+ .conteudo{
+    margin: 20px;
+}
+
+.figura_principal{
+    margin: none;
+}
+
+.figura_principal img{   
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    /* border: thin solid; */
+}
+.label_figure {
+    font-style: italic;
+    padding: 10px;
+    text-align: center;}

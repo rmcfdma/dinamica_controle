@@ -1,0 +1,16 @@
+{% extends 'postagens/home.html' %}
+
+{% block principal_middle %} 
+ <div class="animacao">  
+       <p><a href="{% url 'animacao_pendulo_simples_nao_amortecido' %}">Pêndulo Simples<a/></p>
+       <p><a href="{% url 'animacao_pendulo_simples_amortecido' %}">Pêndulo Simples<a/></p>
+       <p><a href="{% url 'animacao_pendulo_duplo_nao_amortecido' %}">Pêndulo Simples<a/></p>
+       <p><a href="{% url 'animacao_pendulo_duplo_amortecido' %}">Pêndulo Simples<a/></p>
+       <p><a href="{% url 'animacao_pendulos_mola' %}">Pêndulo Simples<a/></p>,</div>
+{% endblock %}
+ 
+{% comment %} {% block principal_middle %} 
+ <div class="animacao">  
+        {% include 'postagens/animacoes/animacao_pendulo_simples.html' %}
+ </div>
+{% endblock %} {% endcomment %}
