@@ -1,16 +1,26 @@
 
 {% extends 'artigos/home.html' %}
+{% load static %}
 
 {% block middle %} 
+<link rel="stylesheet" href="{% static 'artigos/css/tree.css' %}">
     Lista dos sistemas rotacionais
+    
+      
+    
     <ul>
         <li>
           Pêndulo Simples
           <ul>
-            <li>Definição</li>
             <li><a href="{% url 'modelagem_pendulo_simples_lagrange'%}">Lagrange</a></li>
-            <li><a href="{% url 'modelagem_pendulo_simples_newton'%}">2ª Lei de Newton</a></li></li>
-            <li>Animação</li>
+            <li><a href="{% url 'modelagem_pendulo_simples_newton'%}">2ª Lei de Newton</a></li>
+          </ul>
+        </li>
+        <li>
+          Pêndulo Cônico
+          <ul>
+            <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+            <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
           </ul>
         </li>
         <li>

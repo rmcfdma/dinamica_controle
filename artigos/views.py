@@ -26,6 +26,12 @@ def modelagem_pendulo_simples_lagrange(request):
 def modelagem_pendulo_simples_newton(request):
     return render(request,'artigos/modelagens/sistemas_rotacionais/pendulo_simples_newton.html')
 
+def modelagem_pendulo_conico_lagrange(request):
+    return render(request,'artigos/modelagens/sistemas_rotacionais/pendulo_conico_lagrange.html')
+
+def modelagem_pendulo_conico_newton(request):
+    return render(request,'artigos/modelagens/sistemas_rotacionais/pendulo_conico_newton.html')
+
 def modelagem_pendulo_duplo(request):
     return render(request,'artigos/modelagens/sistemas_rotacionais/pendulo_duplo.html')
 
