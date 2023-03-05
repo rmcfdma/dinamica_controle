@@ -4,50 +4,56 @@ h1{
     text-align: center;
     font-style: italic;
     /* margin: auto; */
+    font-family: 'Merriweather', serif;
     width: 600px;
  }
 
 .principal{
-    background: cyan;
+    background: #EDF5E1;
     width: 1100px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 5px 0px;
+    /* gap: 5px 0px; */
  }
 
  .top{
-    background: gray;
-    height: 150px;
+    background: #EDF5E1;
+    height: 250px;
+    width: 1100px;
+    border-bottom: 1px dashed #116466;
 }
 
 .center{
     display: flex;
     flex-direction: row ;
-    justify-content: space-between;
-    background: yellow;
+    /* justify-content: space-between; */
+    background: #EDF5E1;
 }
 
 .left{
-    background: blue;
+    background: #EDF5E1;
     width: 250px;
 }
 
 .middle{
-    background: white;
-    width: 590px;
-    
+    background: #EDF5E1;
+    width: 600px;
+    font-family: 'DM Sans', sans-serif;
+    color: #116466;  
+    border-left: 1px dashed #116466;
+    border-right: 1px dashed #116466;
 }
 
 .right{
-    background: red;
+    background: #EDF5E1;
     width: 250px;
 }
 
 .botton{
-    background: black;
+    background: #EDF5E1;
     height: 150px;
-
+    border-top: 1px dashed #116466;
 }
 
 
@@ -76,4 +82,45 @@ h1{
 .label_figure {
     font-style: italic;
     padding: 10px;
-    text-align: center;}
+    text-align: center;
+}
+
+/* Estilização do contato */
+
+.container_contato{
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+}
+
+.container_zap{
+    display: flex;
+    width: 250px;
+}
+
+.container_email{
+    display: flex;
+    width: 300px;
+}
+
+.figura_zap{
+    height: 25px;
+    width: 25px;
+    padding-right: 10px;
+}
+
+.figura_email{
+    height: 25px;
+    width: 25px;
+    padding-right: 10px;
+}
+
+/* Estilização de quem somos */
+.item_quem_somos{
+    padding-top: 20px;
+}
+
+/* Estilização de quem somos */
+.container_doacoes{
+    padding-left: 20px;
+}

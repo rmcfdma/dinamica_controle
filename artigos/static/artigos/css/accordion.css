@@ -3,39 +3,43 @@
   opacity: 0;
   z-index: -1;
 }
+.espaco{
+  height: 10px;
+}
 .accordion-wrapper {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
   width: 230px;
   margin:0 auto;
+  top: 30px;
 }
 .accordion {
   width: 100%;
-  color: white;
+  color: #EDF5E1;
   overflow: hidden;
-  margin-bottom: 5px;
+  margin-bottom: 5px;  
 }
 
 .link_externo{
-  color: white;
+  color:#EDF5E1;
   text-decoration: none;
   display: flex;
   /* -webkit-box-pack: justify;
   justify-content: space-between; */
   padding: 16px;
-  background: rgba(4,57,94,.8);
+  background: #116466;
   font-weight: bold;
   cursor: pointer;
   font-size: 20px;
 }
 
 .link_interno{
-  color: rgba(4,57,94,.8);
+  color:#379683;
   text-decoration: none;
   display: flex;
   padding: 6px;
-  background: white;
+  background: #EDF5E1;
   font-weight: bold;
   cursor: pointer;
   font-size: 18px;
@@ -49,14 +53,15 @@
   -webkit-box-pack: justify;
   justify-content: space-between;
   padding: 16px;
-  background: rgba(4,57,94,.8);
+  background: #379683;
   font-weight: bold;
   cursor: pointer;
   font-size: 20px;
 }
 
 .accordion-label:hover {
-  background: rgba(4,57,94,1);
+  background: #116466;
+  
 }
 .accordion-label::after {
   content: "\276F";
@@ -69,8 +74,8 @@
 .accordion-content {
   max-height: 0;
   padding: 0 16px;
-  color: rgba(4,57,94,1);
-  background: white;
+  color:#379683;
+  background:  #EDF5E1;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -82,7 +87,7 @@
 }
 
 input:checked + .accordion-label {
-  background: rgba(4,57,94,1);
+  background: #116466;
 }
 input:checked + .accordion-label::after {
   -webkit-transform: rotate(90deg);

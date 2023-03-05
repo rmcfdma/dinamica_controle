@@ -15,6 +15,22 @@
      id="defs54153">
     <marker
        style="overflow:visible"
+       id="marker59101"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="17"
+       markerHeight="19.125"
+       viewBox="0 0 5.3244081 6.1553851"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path59099" />
+    </marker>
+    <marker
+       style="overflow:visible"
        id="marker49386"
        refX="0"
        refY="0"
@@ -935,7 +951,7 @@
       </g>
     </g>
     <g
-       transform="matrix(1.05833,0,0,1.05833,137.50274,106.3007)"
+       transform="matrix(1.05833,0,0,1.05833,163.29754,115.25616)"
        ns2:version="1.8.2"
        ns2:texconverter="pdflatex"
        ns2:pdfconverter="inkscape"
@@ -1080,5 +1096,38 @@
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.192;stroke-dasharray:0.575998, 0.575998;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 100.99633,163.51177 36.92259,-0.29155"
        id="path51479" />
+    <g
+       transform="matrix(1.05833,0,0,1.05833,128.16329,111.71684)"
+       ns2:version="1.8.2"
+       ns2:texconverter="pdflatex"
+       ns2:pdfconverter="inkscape"
+       ns2:text="T"
+       ns2:preamble="C:\Program Files\Inkscape\share\inkscape\extensions\textext\default_packages.tex"
+       ns2:scale="3.0"
+       ns2:alignment="middle center"
+       ns2:stroke-to-path="0"
+       ns2:inkscapeversion="1.2.2"
+       ns2:jacobian_sqrt="1.05833"
+       id="g58972">
+      <defs
+         id="id-fa522909-90f5-43d5-93d5-ba7e7532bb2e" />
+      <g
+         fill="#000000"
+         fill-opacity="1"
+         id="id-fcdbe01f-5f96-4596-9d49-f3778667e887"
+         transform="translate(-149.071,-128.015)">
+        <g
+           transform="translate(148.712,134.765)"
+           id="g58969">
+          <path
+             d="m 6.640625,-6.75 h -6.09375 l -0.1875,2.25 h 0.25 C 0.75,-6.109375 0.890625,-6.4375 2.40625,-6.4375 c 0.171875,0 0.4375,0 0.53125,0.015625 0.21875,0.046875 0.21875,0.15625 0.21875,0.375 v 5.265625 c 0,0.328125 0,0.46875 -1.046875,0.46875 H 1.703125 V 0 C 2.109375,-0.03125 3.125,-0.03125 3.59375,-0.03125 c 0.453125,0 1.484375,0 1.890625,0.03125 v -0.3125 h -0.40625 c -1.046875,0 -1.046875,-0.140625 -1.046875,-0.46875 v -5.265625 c 0,-0.1875 0,-0.328125 0.1875,-0.375 0.109375,-0.015625 0.375,-0.015625 0.5625,-0.015625 1.515625,0 1.65625,0.328125 1.796875,1.9375 h 0.25 z m 0,0"
+             id="id-07f2b3e7-1c34-449d-acd1-d2dbe5ff9e47" />
+        </g>
+      </g>
+    </g>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.192;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker59101);paint-order:markers stroke fill"
+       d="m 165.82331,113.50819 c -1.69571,-7.64234 -6.76056,-9.80983 -13.81664,-8.74156"
+       id="path59097" />
   </g>
 </svg>

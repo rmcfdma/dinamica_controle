@@ -1,0 +1,47 @@
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+summary{
+    cursor: pointer;
+}
+
+details > summary {
+    list-style-type: '+  ';
+}
+
+details[open] > summary {
+    list-style-type: '-  ';
+    transition: 1s;
+}
+
+summary::marker{
+    font-size: 1.5em;
+    padding-right: 10px;
+}
+
+details[open] {
+    animation-name: fadeInDown;
+    animation-duration: 1s;
+}    
+
+ul{
+    list-style: none;
+}
+
+ol > li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+ol > li:before {
+    content: '\2022';
+    font-size: 1.5em;
+    margin-right: 10px;
+  }
+
