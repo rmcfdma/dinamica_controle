@@ -14,4 +14,8 @@ urlpatterns = [
     path('modelagem/pendulo_conico_newton/', views.modelagem_pendulo_conico_newton, name='modelagem_pendulo_conico_newton'),
     path('modelagem/pendulo_duplo/', views.modelagem_pendulo_duplo, name='modelagem_pendulo_duplo'),
     path('modelagem/2_pendulos_conectados_por_mola/', views.modelagem_2_pendulos_conectados_por_mola, name='modelagem_2_pendulos_conectados_por_mola'),
+    path('sobre/contato/', views.contato, name='contato'),
+    path('sobre/doacoes/', views.doacoes, name='doacoes'),
+    path('sobre/parceiros/', views.parceiros, name='parceiros'),
+    path('sobre/quem_somos/', views.quem_somos, name='quem_somos'),
 ]
