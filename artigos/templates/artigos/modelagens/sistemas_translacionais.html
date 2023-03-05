@@ -1,5 +1,123 @@
 {% extends 'artigos/home.html' %}
+{% load static %}
 
 {% block middle %} 
-    Lista dos sistemas translacionais
+<link rel="stylesheet" href="{% static 'artigos/css/treeview.css' %}">
+  
+<h1>Sistemas Translacionais</h1>
+
+<ul>
+  <li>
+    <details>
+      <summary class="super_lista">Plano Inclinado</summary>
+      <ul>
+        <li>
+          <details>
+            <summary class="lista">Pêndulos Simples</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_simples_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_simples_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>nnnnnnnn</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Pêndulo Elástico</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Pêndulo de Torção</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Pêndulo Invertido</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Pêndulo Duplo</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Pêndulo Amortecido</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Pêndulo Físico</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Dois Pêndulos Interligados por Mola</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Dois Pêndulos Unidos Interligados com mola</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+      </ul> 
+    </details>
+    </li>
+    <li>
+    <details>
+      <summary class="super_lista">Massa Mola</summary>
+      <ul>
+        <li>
+          <details>
+            <summary class="lista">Simples</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_simples_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_simples_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Torção</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+      </ul> 
+    </details>
+    </li>
+</ul>
+
 {% endblock %}
+    

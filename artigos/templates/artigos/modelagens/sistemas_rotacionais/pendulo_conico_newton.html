@@ -15,7 +15,7 @@
 <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
-
+          
 
 <h1>Pêndulo Cônico - 2ª Lei de Newton</h1> 
 
@@ -26,117 +26,124 @@
   </figure>
 </div>
 
-<p>Neste artigo será deduzida a equação diferencial que rege o movimento do Pêndulo Simples utilizando a 2ª Lei de Newton, onde:
+<p>Neste artigo serão deduzidas as equações diferenciais que regem o movimento do Pêndulo Cônico utilizando a 2ª Lei de Newton, onde:
 
   \begin{align} \label{eqn:forca_resultante}
-  \boldsymbol{F_{Res}} = m\boldsymbol{a}
+    \boldsymbol{F_{Res}} = m\boldsymbol{a}
   \end{align} 
 
 </p>
 
-<p>Na equação \eqref{eqn:forca_resultante}, \(F_{Res}\) é a força resultante
+<p>Na equação \eqref{eqn:forca_resultante}, \(\boldsymbol{F_{Res}}\) é a força resultante
    que pode ser entendida como o soma vetorial das forças que agem sobre o sistema
-   e \(\boldsymbol{a}\) é a aceleração do ponto Q em relação ao referencial inercial representado por R.
-
+   e \(\boldsymbol{a}\) é a aceleração do ponto Q em relação ao referencial R.
 </p>
 
 <p>Para fins de convenção, neste artigo, todos os elementos que correspondem a vetores estarão em negrito.
 
-<p>No modelo apresentado na figura acima é possível observar dois vetores unitários \( \boldsymbol{a_1}\) e \(\boldsymbol{a_2}\), sendo o primeiro
-   longitudinal ao eixo da haste, e o segundo perpendicular a esse eixo e um terceiro vetor \(\boldsymbol{a_3}\), 
-   também perpendicular ao eixo da haste porém, segundo a regra da mão direita, aponta para fora da tela de forma que \( \boldsymbol{n_1} \times \boldsymbol{n_2} = \boldsymbol{n_3}.\)</p>
+<p>Na figura acima, R é o referencial inercial com coordenadas \(x,y\) e \(z\), 
+   o refenrencial B é plano imaginário que acompanha o pêndulo em relação ao ângulo
+   \(\phi\) e possui uma base fixa \(\{\mathbf{b_1},\mathbf{b_2},\mathbf{b_3}\}\) e o referencial A
+  é a esfera do pêndulo onde foi posicionada uma base \(\{\mathbf{a_1},\mathbf{a_1},\mathbf{a_1} \}\)</p>
 
-<p>Esses três vetores formam uma base fixa no referencial \(A\) propositalmente posicionada na
-esfera de forma a aproveitar a geometria do dispositivo.<p/>
+<p>Vale ressaltar que como os vetores das bases fixas em A e B são unitários e ortogonais, são válidas as afirmações das equações \eqref{eqn:a3_b3} e \eqref{eqn:-b1}. 
+  
+  \begin{align} 
+  \boldsymbol{b_3} & = \boldsymbol{a_3} \label{eqn:a3_b3}\\[1em]
+  -\boldsymbol{b_1} & = -\cos{\theta}\boldsymbol{a_1} + \sin{\theta}\boldsymbol{a_2} \label{eqn:-b1}
+  \end{align} 
+</p> 
 
-<p>Sendo assim é possível observar três forças atuando sobre o sistema, que seriam:
-\begin{align} 
-  \boldsymbol{F_1} & = -T\boldsymbol{a_1} \label{eqn:forca_tracao} \\ 
-  \boldsymbol{F_2} & = mg \cos{\theta} \, \boldsymbol{a_1} - mg \sin{\theta} \, \boldsymbol{a_2} \\
-  \boldsymbol{F_3} & = -c \dot{\theta} \, \boldsymbol{a_2} \label{eqn:forca_amortecimento}
-\end{align} 
+<p>Realizando uma análise do movimento, é possível notar que os vetores da base fixa em A
+  variam em relação ao referencial B que, por sua vez, também possui uma base fixa que varia
+  em relação ao referencial R. 
 </p>
 
-<p>Aqui \(\boldsymbol{F_1}\) é uma força de módulo \( T \) com sentido contrário à \(\boldsymbol{a_1}\) que representa a tensão na haste, \(\boldsymbol{F_2}\) 
-é a força gravitacional decomposta em  \(\boldsymbol{a_1}\) e \(\boldsymbol{a_2}\), onde \(g\) é o módulo da aceleração gravitacional e \(\boldsymbol{F_3}\) 
-é uma força não conservativa de módulo \(c\dot{\theta}\), coeficiente de amortecimento \(c\) e é contrária ao movimento do pêndulo.</p>
-
-<p> Vale ressaltar que, embora não esteja representada na figura, \(\boldsymbol{F_3}\) representa uma força capaz de impedir a oscilação infinita do pêndulo, sendo essa a situação que acontece na vida real.</p>
-
-<p align="justify" class="paragrafo">Em seguida será calculado o vetor velocidade angular \(\boldsymbol{\omega}\) de módulo \( \omega =\dot{\theta}\), que segundo a regra da mão direita, tem a mesma direção e sentido de \(\boldsymbol{a_3}\) e será utilizado para o cálculo das derivadas
-dos vetores da base A em relação ao referencial inercial R, da forma que se segue:
-
-\begin{align} 
-  \boldsymbol{\omega} & = \dot{\theta} \, \boldsymbol{a_3} \label{eqn:velocidade_angular}\\ 
-  \boldsymbol{\dot{a}_1} & = \dot{\theta} \, \boldsymbol{a_3} \times \boldsymbol{a_1} = \dot{\theta} \, \boldsymbol{a_2} \label{eqn:derivada_a1}\\
-  \boldsymbol{\dot{a}_2} & = \dot{\theta} \, \boldsymbol{a_3} \times \boldsymbol{a_2} = -\dot{\theta} \, \boldsymbol{a_1} \label{eqn:derivada_a2}\\
-  \boldsymbol{\dot{a}_3} & = \dot{\theta} \, \boldsymbol{a_3} \times \boldsymbol{a_3} = 0 \label{eqn:derivada_a3}\\
-\end{align} 
-</p>
-<p align="justify" class="paragrafo">
-  Nesse ponto é conveniente traçar um vetor \(\boldsymbol{P}\) que aponta para \(\boldsymbol{a_1}\) onde \(|\boldsymbol{P}| = L\) como em \eqref{eqn:vetor_posicao_linear}, que representará o vetor posição do ponto Q com respeito a O. 
-</p>
-<p align="justify" class="paragrafo">Assim, de posse das derivadas obtidas em 
-\eqref{eqn:derivada_a1} e \eqref{eqn:derivada_a2}, é possível obter os vetores velocidade e aceleração linear em \eqref{eqn:vetor_velocidade_linear} e \eqref{eqn:vetor_aceleracao_linear} que representam, respectivamente, a primeira e a segunda derivada de \(\boldsymbol{P}\) em relação a R. Logo:
-
-
-
-\begin{align} 
-  \boldsymbol{P} & = L \, \boldsymbol{a_1} \label{eqn:vetor_posicao_linear}\\ 
-  \boldsymbol{\dot{P}} & = L \, \boldsymbol{\dot{a}_1} = L \dot{\theta}\, \boldsymbol{a_2} \label{eqn:vetor_velocidade_linear}\\
-  \boldsymbol{\ddot{P}} & = L ( \ddot{\theta} \,\boldsymbol{a_2} + \dot{\theta} \, \boldsymbol{\dot{a}_2} )= L ( \ddot{\theta} \, \boldsymbol{a_2} - L \dot{\theta^2} \, \boldsymbol{a_1} ) \label{eqn:vetor_aceleracao_linear}
-\end{align} 
+<p>Sendo assim, para o cálculo da derivada dos vetores das bases, é necessário calcular o vetor \(^B\boldsymbol{\omega}^A\), que representa a velocidade angular do referencial A em relação ao referencial B
+  e o vetor \(^R\boldsymbol{\omega}^B\), que representa a velocidade angular do referencial B em relação ao referencial R para obter-se a velocidade angular de A em R, representada por \(^R\boldsymbol{\omega}^A\).
 </p>
 
-<p align="justify" class="paragrafo">Assim, assumindo a massa da haste como desprezível e utilizando a massa \(m\) da esfera para compor a equação \eqref{eqn:forca_resultante}, a força resultante \(\boldsymbol{F}_{res}\) 
-pode ser definida conforme a equação \eqref{eqn:vetor_forca_resultante}, onde o vetor aceleração linear possui duas componentes,
-uma tangencial à trajetória do pêndulo com direção e sentido de \(\boldsymbol{a_2}\) e \(\boldsymbol{\dot{P}}\), com módulo igual a \(\ddot{\theta}\), 
-e outra centrípeta na mesma direção porém  sentido contrário à \(\boldsymbol{a_1}\) com módulo igual a \(L\dot{\theta}^2\). 
+<p>Sendo assim são válidas as equações de \eqref{eqn:r_omega_b} à \eqref{eqn:r_omega_a}.
+  \begin{align} 
+    ^R\boldsymbol{\omega}^B & = -\boldsymbol{\dot{\phi}}\boldsymbol{b_1} = \dot{\phi} (-\cos{\theta}\boldsymbol{a_1} + \sin{\theta}\boldsymbol{a_2}) \label{eqn:r_omega_b}\\
+    ^B\boldsymbol{\omega}^A & = \dot{\theta}\boldsymbol{a_3} \label{eqn:b_omega_a} \\
+    ^R\boldsymbol{\omega}^A & = \, ^R\boldsymbol{\omega}^B + ^B\boldsymbol{\omega}^A \label{eqn:r_omega_b_mais_b_omega_a}\\
+    ^R\boldsymbol{\omega}^A & = -\dot{\phi} \cos{\theta}\boldsymbol{a_1} + \dot{\phi} \sin{\theta}\boldsymbol{a_2} + \dot{\theta}\boldsymbol{a_3} \label{eqn:r_omega_a}
+  \end{align} 
+</p>
 
+<p>
+  Assim é possível calcular a derivada dos vetores da base em A em relação a R, conforme pode ser visto nas equações de \eqref{eqn:dot_a_1_0} à \eqref{eqn:dot_a_3}.
+  \begin{align}
+      \,^R\dot{a}_1 & = \, ^R\boldsymbol{\omega}^A \times \boldsymbol{a_1} = (-\dot{\phi} \cos{\theta}\boldsymbol{a_1} + \dot{\phi} \sin{\theta}\boldsymbol{a_2} + \dot{\theta}\boldsymbol{a_3}) \times \boldsymbol{a_1} \label{eqn:dot_a_1_0}\\
+      \,^R\dot{a}_1 & = - \dot{\phi}\sin{\theta}\boldsymbol{a_3} + \dot{\theta}\boldsymbol{a_2}  \label{eqn:dot_a_1}\\
+      \,^R\dot{a}_2 & = \, ^R\boldsymbol{\omega}^A \times \boldsymbol{a_2} = (-\dot{\phi} \cos{\theta}\boldsymbol{a_1} + \dot{\phi} \sin{\theta}\boldsymbol{a_2} + \dot{\theta}\boldsymbol{a_3}) \times \boldsymbol{a_2} \\
+      \,^R\dot{a}_2 & = -\dot{\phi} \cos{\theta}\boldsymbol{a_3} - \dot{\theta} \boldsymbol{a_1} \label{eqn:dot_a_2} \\
+      \,^R\dot{a}_3 & = \, ^R\boldsymbol{\omega}^A \times \boldsymbol{a_3} = (-\dot{\phi} \cos{\theta}\boldsymbol{a_1} + \dot{\phi} \sin{\theta}\boldsymbol{a_2} + \dot{\theta}\boldsymbol{a_3}) \times \boldsymbol{a_3} \\
+      \,^R\dot{a}_3 & = \dot{\phi} \cos{\theta} \boldsymbol{a_2} + \dot{\phi}\sin{\theta} \boldsymbol{a_1} \label{eqn:dot_a_3}
+  \end{align}
+</p>
 
+<p>Com os resultados acima, agora, é possível calcular a primeira e a segunda derivada, em relação a R, do vetor posição \(\boldsymbol{P}\) do ponto 
+   Q com respeito ao ponto O. 
+   
+   \begin{align}
+      \boldsymbol{P}^{Q/O} & = \ell\boldsymbol{a_1} \\
+      ^R\dot{\boldsymbol{P}}^{Q/O} & = \,^R\boldsymbol{v}^Q =\ell \dot{\boldsymbol{a}}_\boldsymbol{1} = -\ell \dot{\phi} \sin{\theta} \boldsymbol{a_3} + \ell \dot{\theta} \boldsymbol{a_2}\\
+      ^R\ddot{\boldsymbol{P}}^{Q/O} & = \,^R\boldsymbol{a}^Q = -\ell [(\ddot{\phi} \sin{\theta} + \dot{\theta}\dot{\phi}) \boldsymbol{a_3} + \dot{\phi} \sin{\theta}  \dot{\boldsymbol{a}}_\boldsymbol{3}] + \ell(\ddot{\theta}\boldsymbol{a_2} + \dot{\theta}  \dot{\boldsymbol{a}}_\boldsymbol{2}) \label{eqn:a_1}
+   \end{align}
+</p>
+
+<p>Substituindo as derivadas em relação a R dos vetores unitários obtidas nas equações de \eqref{eqn:dot_a_1_0} à \eqref{eqn:dot_a_3}
+   na expressão do vetor aceleração linear da equação \eqref{eqn:a_1} e separando os termos, chega-se a uma expressão
+   final para a aceleração, conforme a equação \eqref{eqn:a_final}.
+   
+   \begin{align}
+      \begin{split} 
+          ^R\boldsymbol{a}^Q = {} & -\ell(\dot{\phi}^2 \sin^2{\theta} + \dot{\theta}^2)\boldsymbol{a_1} \\
+                                  & + \ell(\ddot{\theta} - \dot{\phi}^2 \sin{\theta}\cos{\theta})\boldsymbol{a_2}\\
+                                  & + \ell(\ddot{\phi}\sin{\theta} + 2\dot{\theta}\dot{\phi}\cos{\theta})\boldsymbol{a_3} 
+      \end{split} \label{eqn:a_final}
+   \end{align}
+</p>
+  
+<p>Ao analizar as forças que agem sobre a esfera tem-se que:
+  \begin{align}
+      m\mathrm{g}\cos{\theta} - T & = ma_{\boldsymbol{a_1}} \label{eqn:equacoes_a1}\\
+      m\mathrm{g}\cos{\theta}  & = ma_{\boldsymbol{a_2}}\label{eqn:equacoes_a2}\\
+      0 & = ma_{\boldsymbol{a_3}} \label{eqn:equacoes_a3}
+  \end{align}
+</p>
+
+<p>Substituindo as componentes de \(^R\boldsymbol{a}^Q\) obtidas na equação \eqref{eqn:a_final}
+nas equações referente à aplicação da 2ª lei de Newtom obtidas nas equações de \eqref{eqn:equacoes_a1} à \eqref{eqn:equacoes_a3},
+encontra-se os resultados das equações de \eqref{eqn:equacoes_a1_1} à \eqref{eqn:equacoes_a3_1}.
 \begin{align}
-  \boldsymbol{F}_{res} = m \, \boldsymbol{\ddot{P}} = m \, ( \ddot{\theta} \, \boldsymbol{n_2} - L \dot{\theta^2} \, \boldsymbol{n_1} ) \label{eqn:vetor_forca_resultante}
-\end{align}
-</p>
-<p align="justify" class="paragrafo">Utilizando a \(2^a\) Lei de Newton e considerando \(n\) na equação \eqref{eqn:vetor_forca_resultante_somatorio} como o nº de forças atuantes sobre o sistema, é correto afirmar que:
-
-\begin{align}
-  \boldsymbol{F}_{res} & =  \sum_{i=1}^{n} \boldsymbol{F_i} \label{eqn:vetor_forca_resultante_somatorio}\\
-\end{align} 
-</p>
-
-<p align="justify" class="paragrafo"> Separando na equação \eqref{eqn:vetor_forca_resultante_somatorio} as forças que atuam na direção de \(\boldsymbol{a_1}\) das forças que atuam na direção de \(\boldsymbol{a_2}\), obtém-se
-
-\begin{align}
-  F_{res} \,\boldsymbol{a_1} & =  \sum_{i=1}^{n} F_i \,\boldsymbol{a_1} \\
-  - mL \dot{\theta^2} \, \boldsymbol{a_1} & =  (mg \cos{\theta} - T)\, \boldsymbol{a_1} \label{eqn:vetor_forca_resultante_n1}\\
-  F_{res} \,\boldsymbol{a_2} & =  \sum_{i=1}^{n} F_i \,\boldsymbol{a_2} \\
-  m \,  L \, \ddot{\theta} \, \boldsymbol{a_2} & = - ( mg \sin{\theta} + c \dot{\theta} ) \, \boldsymbol{a_2} \label{eqn:vetor_forca_resultante_n2}
-\end{align}
-</p>
-
-<p align="justify" class="paragrafo"> Igualando somente os módulos o nas equações \eqref{eqn:vetor_forca_resultante_n1} e \eqref{eqn:vetor_forca_resultante_n2} obtém-se
-  os resultados das equações \eqref{eqn:equacao_movimento_1} e \eqref{eqn:equacao_movimento_2}.
-
-\begin{align}
-  - mL \dot{\theta^2} & =  mg \cos{\theta} - T \label{eqn:equacao_movimento_1}\\
-  m \,  L \, \ddot{\theta} & = - ( mg \sin{\theta} + c \dot{\theta} ) \label{eqn:equacao_movimento_2}
-\end{align}
-
-<p align="justify" class="paragrafo">A equação \eqref{eqn:equacao_movimento_1}, através de uma simples manipulação algébrica, possibilita obter uma expressão para \(T\) em termos de 
-  \(\theta\) e \(\dot{\theta}\) como pode ser visto em \eqref{eqn:forca_tracao_equacao}, porém é a equação \eqref{eqn:equacao_movimento_1} que rege de fato o movimento oscilatório do pêndulo.
-</p>
-
-<p align="justify" class="paragrafo">Após pouca manipulação, também é possível obter uma expressão para a aceleração angular conforme pode ser
-observado finalmente na equação \eqref{eqn:equacao_movimento_final}
-
-\begin{align}
-  T & =  mL \dot{\theta^2} +  mg \cos{\theta} \label{eqn:forca_tracao_equacao}\\
-  \ddot{\theta} & = - \frac{g}{L} \sin{\theta} - \frac{c}{mL} \dot{\theta} \label{eqn:equacao_movimento_final}
+    m\mathrm{g}\cos{\theta} - T & = -m \ell(\dot{\phi}^2 \sin^2{\theta} + \dot{\theta}^2) \label{eqn:equacoes_a1_1}\\
+    -m\mathrm{g}\cos{\theta}  & = m \ell(\ddot{\theta} - \dot{\phi}^2 \sin{\theta}\cos{\theta})   \label{eqn:equacoes_a2_1}\\
+    0 & = m \ell(\ddot{\phi}\sin{\theta} + 2\dot{\theta}\dot{\phi}\cos{\theta}) \label{eqn:equacoes_a3_1}
 \end{align}
 </p>
 
-<p align="justify" class="paragrafo">A animação do Pêndulo Simples, que também fornece uma interação com o modelo,
- pode ser vista em: <a href=" https://www.glowscript.org/#/user/clarinetabest/folder/projetos/program/pendulosimples">Pêndulo Simples</a>
+<p>A equação \eqref{eqn:equacoes_a1_1} define uma expressão para a tensão T, conforme a equação \eqref{}. 
+  \begin{align}
+   T = m [\mathrm{g}\cos{\theta} + \ell(\dot{\phi}^2 \sin^2{\theta} + \dot{\theta}^2)] \label{eqn:T}\\
+  \end{align}
 </p>
+
+<p>E as equações \eqref{eqn:equacoes_a2_1} e \eqref{eqn:equacoes_a3_1} são as equações de movimento propriamente ditas, que 
+  após algumas simplificações obtém-se, finalmente, o formato desejada. 
+  \begin{align} 
+      \ddot{\theta} - \dot{\phi}^2 \cos{\theta}\sin{\theta} + \frac{\mathrm{g}}{\ell}  \sin{\theta} & = -b\dot{\theta} \label{eqn:equacao_movimento_theta_simplificada}\\
+      \ddot{\phi}\sin{\theta} + 2 \dot{\theta}\dot{\phi}  \cos{\theta} & = -b\dot{\phi} \label{eqn:equacao_movimento_phi_simplificada}  
+  \end{align}
+</p>
+
+<p>Obs.: Uma observação importante a ser feita sobre esses resultados é que, caso \(\phi\) seja nulo, 
+  estas equações transformam-se na equação do pêndulo simples. Confira! </p>
+
+  {% with paginas as paginated %}
+    {% include 'artigos/partes/paginacao.html' %}
+  {% endwith %}
+
 {% endblock %}

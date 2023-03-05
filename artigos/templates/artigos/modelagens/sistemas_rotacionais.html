@@ -3,46 +3,122 @@
 {% load static %}
 
 {% block middle %} 
-<link rel="stylesheet" href="{% static 'artigos/css/tree.css' %}">
-    Lista dos sistemas rotacionais
-    
-      
-    
-    <ul>
+<link rel="stylesheet" href="{% static 'artigos/css/treeview.css' %}">
+  
+<h1>Sistemas Rotacionais</h1>
+
+<ul>
+  <li>
+    <details>
+      <summary class="super_lista">Pêndulos</summary>
+      <ul>
         <li>
-          Pêndulo Simples
-          <ul>
-            <li><a href="{% url 'modelagem_pendulo_simples_lagrange'%}">Lagrange</a></li>
-            <li><a href="{% url 'modelagem_pendulo_simples_newton'%}">2ª Lei de Newton</a></li>
-          </ul>
+          <details>
+            <summary class="lista">Pêndulos Simples</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_simples_lagrange'%}?page=1" >Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_simples_newton'%}?page=2" >2ª Lei de Newton</a></li>
+            <ol> 
         </li>
         <li>
-          Pêndulo Cônico
-          <ul>
-            <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
-            <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
-          </ul>
+          <details>
+            <summary>Pêndulo Cônico</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}?page=3" >Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}?page=4">2ª Lei de Newton</a></li>
+            <ol> 
         </li>
         <li>
-            Pêndulo Duplo
-            <ul>
-              <li>Definição</li>
-              <li><a href="{% url 'modelagem_pendulo_duplo'%}">Lagrange</a></li>
-              <li>Teoremas Cinemáticos</li>
-              <li>Newton Euler</li>
-              <li>Animação</li>
-            </ul>
+          <details>
+            <summary>Pêndulo Elástico</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
         </li>
         <li>
-            2 Pêndulos conectados por mola
-            <ul>
-              <li>Definição</li>
-              <li><a href="{% url 'modelagem_2_pendulos_conectados_por_mola'%}">Lagrange</a></li>
-              <li>Teoremas Cinemáticos</li>
-              <li>Newton Euler</li>
-              <li>Animação</li>
-            </ul>
+          <details>
+            <summary>Pêndulo de Torção</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
         </li>
-      </ul>
+        <li>
+          <details>
+            <summary>Pêndulo Invertido</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Pêndulo Duplo</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Pêndulo Amortecido</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Pêndulo Físico</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Dois Pêndulos Interligados por Mola</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Dois Pêndulos Unidos Interligados com mola</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+      </ul> 
+    </details>
+    </li>
+    <li>
+    <details>
+      <summary class="super_lista">Hélice</summary>
+      <ul>
+        <li>
+          <details>
+            <summary class="lista">Simples</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_simples_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_simples_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+        <li>
+          <details>
+            <summary>Torção</summary>
+            <ol>
+              <li><a href="{% url 'modelagem_pendulo_conico_lagrange'%}">Lagrange</a></li>
+              <li><a href="{% url 'modelagem_pendulo_conico_newton'%}">2ª Lei de Newton</a></li>
+            <ol> 
+        </li>
+      </ul> 
+    </details>
+    </li>
+</ul>
+
 {% endblock %}
     

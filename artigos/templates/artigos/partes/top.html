@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    <body>
+      <div class="container_top">
+            <div class="container_top_left"> 
+              <img class="figura_top_left" src="{% static 'artigos/img/pngs/imagem_top_1.png' %}"/>
+            </div>
+            <div class="container_top_middle"> 
+              <div class="espaco"></div>
+              <div class="titulo">Controle e Dinâmica em Ação</div>
+              <ul class="menu_topo">
+                <li><a class="link_interno" href="{% url 'contato' %}">Contato</a></li>
+                <li><a class="link_interno" href="{% url 'quem_somos' %}">Quem Somos</a></li>
+                <li><a class="link_interno" href="{% url 'doacoes' %}">Doações</a></li>
+                <li><a class="link_interno" href="{% url 'parceiros' %}">Parceiros</a></li>
+              </ul>
+            </div>
+            <div class="container_top_right"> 
+              <img class="figura_top_right" src="{% static 'artigos/img/svgs/chip.svg' %}"/>
+            </div>
+        </div>
+      </body>
+    </html>
