@@ -17,7 +17,7 @@ path = os.path.join(BASE_DIR,'artigos/static/artigos/json/')
 
 def jsonToDict(sistema):
     caminho = os.path.join(path , sistema)
-    with  open(caminho, 'r') as f:
+    with  open(caminho, 'r', encoding="utf-8") as f:
         dicionario = json.load(f)
     return dicionario
 
@@ -62,7 +62,7 @@ def modelagem_pendulo_simples_lagrange(request):
         paginas = paginator.page(page)
     except InvalidPage:
         paginas = paginator.page(1)
-    context = {'paginas': paginas, 'total': total}
+    context = {'paginas': paginas, 'total': total, 'tuplas': tuplas}
     return render(request,'artigos/modelagens/sistemas_rotacionais/' + tuplas[int(page)-1][2],context)
 
 def modelagem_pendulo_simples_newton(request):
@@ -74,7 +74,7 @@ def modelagem_pendulo_simples_newton(request):
         paginas = paginator.page(page)
     except InvalidPage:
         paginas = paginator.page(1)
-    context = {'paginas': paginas, 'total': total}
+    context = {'paginas': paginas, 'total': total, 'tuplas': tuplas}
     return render(request,'artigos/modelagens/sistemas_rotacionais/' + tuplas[int(page)-1][2],context)
 
 def modelagem_pendulo_conico_lagrange(request):
@@ -86,7 +86,7 @@ def modelagem_pendulo_conico_lagrange(request):
         paginas = paginator.page(page)
     except InvalidPage:
         paginas = paginator.page(1)
-    context = {'paginas': paginas, 'total': total}
+    context = {'paginas': paginas, 'total': total, 'tuplas': tuplas}
     return render(request,'artigos/modelagens/sistemas_rotacionais/' + tuplas[int(page)-1][2],context)
 
 def modelagem_pendulo_conico_newton(request):
@@ -98,7 +98,7 @@ def modelagem_pendulo_conico_newton(request):
         paginas = paginator.page(page)
     except InvalidPage:
         paginas = paginator.page(1)
-    context = {'paginas': paginas, 'total': total}
+    context = {'paginas': paginas, 'total': total, 'tuplas': tuplas}
     return render(request,'artigos/modelagens/sistemas_rotacionais/' + tuplas[int(page)-1][2],context)
 
 def modelagem_pendulo_duplo(request):
