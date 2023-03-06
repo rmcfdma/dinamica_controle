@@ -17,7 +17,9 @@
 
 
 
-<h1>Pêndulo Cônico - Lagrange</h1> 
+{% with paginas as paginated %}
+  {% include 'artigos/partes/titulo_modelo.html' %}
+{% endwith %} 
 
 <div class="figura_principal"> 
   <figure>
@@ -74,7 +76,7 @@
   <p>A energia cinética T do pêndulo é dada pela equação \eqref{eqn:energia_cinetica_expandida_1},
      e substituindo as velocidades encontradas na equação \eqref{eqn:posicao_velocidade} na equação \eqref{eqn:energia_cinetica_expandida_1}, 
      isolando \(\ell^2\), \(\dot{\theta}^2\cos^2{\theta}\), \(\dot{\phi}^2\sin^2{\theta}\), cancelando os termos \(2 \ell^2 \dot{\theta} \dot{\phi} \cos{\theta}\sin{\phi}\sin{\theta}\cos{\phi}\) e utilizando a identidade trigonométrica \(\cos^2{x}+\sin^2{x} = 1\), obtém-se os
-     resultados das equações de \eqref{eqn:energia_cinetica_expandida_2} a \eqref{eqn:energia_cinetica_expandida_4}. </p>
+     resultados das equações de \eqref{eqn:energia_cinetica_expandida_2} a \eqref{eqn:energia_cinetica_expandida_4}. 
 
 
   \begin{align} 
@@ -82,9 +84,9 @@
       T = {} & \frac{1}{2} m (\dot{x}^2 + \dot{y}^2 + \dot{z}^2) \\
       \end{split} \label{eqn:energia_cinetica_expandida_1}\\[2ex]
     & \begin{split} 
-      T = {} & \frac{1}{2} m ( \ell^2 \dot{\theta}^2 \cos^2{\theta}\cos^2{\phi} - 2 \ell^2 \dot{\theta} \dot{\phi} \cos{\theta}\cos{\phi}\sin{\theta}\sin{\phi} + \ell^2 \dot{\phi}^2 \sin^2{\theta}\sin^2{\phi} \\
-             & + \ell^2 \dot{\theta}^2 \cos^2{\theta}\sin^2{\phi} + 2 \ell^2 \dot{\theta} \dot{\phi} \cos{\theta}\sin{\phi}\sin{\theta}\cos{\phi} + \ell^2 \dot{\phi}^2 \sin^2{\theta}\cos^2{\phi} \\
-             & + \ell^2 \dot{\theta}^2 \sin^2{\theta})
+      T = {} & \frac{1}{2} m ( \ell^2 \dot{\theta}^2 \cos^2{\theta}\cos^2{\phi} - 2 \ell^2 \dot{\theta} \dot{\phi} \cos{\theta}\cos{\phi}\sin{\theta}\sin{\phi}\\
+             & + \ell^2 \dot{\phi}^2 \sin^2{\theta}\sin^2{\phi} + \ell^2 \dot{\theta}^2 \cos^2{\theta}\sin^2{\phi}   \\
+             & + 2 \ell^2 \dot{\theta} \dot{\phi} \cos{\theta}\sin{\phi}\sin{\theta}\cos{\phi} + \ell^2 \dot{\phi}^2 \sin^2{\theta}\cos^2{\phi} + \ell^2 \dot{\theta}^2 \sin^2{\theta})
       \end{split} \label{eqn:energia_cinetica_expandida_2} \\[2ex]
     & \begin{split} 
       T = {} & \frac{1}{2} m \ell^2 [(\dot{\theta}^2 \cos^2{\theta}(\cos^2{\phi} + sin^2{\phi})\\ 
@@ -94,10 +96,11 @@
     & \begin{split} 
       T = {} & \frac{1}{2} m \ell^2 (\dot{\theta}^2 \cos^2{\theta} + \dot{\phi}^2 \sin^2{\theta} + \dot{\theta}^2 \sin^2{\theta})
       \end{split} \label{eqn:energia_cinetica_expandida_4}
-  \end{align}</p>
+  \end{align}
+</p>
 
   <p>Isolando \( \dot{\theta^2}\) e utilizando novamente a identidade trigonométrica anterior de forma que \(\cos^2{\theta} + \sin^2{\theta} = 1\),
-     obtém-se uma expressão para a energia cinética que pode ser vista na equação \eqref{eqn:energia_cinetica_final}.</p>
+     obtém-se uma expressão para a energia cinética que pode ser vista na equação \eqref{eqn:energia_cinetica_final}.
 
   \begin{align}
      T = \frac{1}{2}m \ell^2 \dot{\theta^2} + \frac{1}{2}m \ell^2 \dot{\phi}^2 \sin^2{\theta} \label{eqn:energia_cinetica_final}

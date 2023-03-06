@@ -1,8 +1,10 @@
+{% load index %}
+
 {% if paginated.has_other_pages %}
     <ul class="pagination">
     {% if paginated.has_previous %}
         <li class="page-item">
-          <a href="?page={{ paginated.previous_page_number }}">&laquo;</a>
+          <a href="?page={{ paginated.previous_page_number }}" title="Anterior">&laquo;</a>
         </li>
     {% else %}
         <li class="page-item">
@@ -16,14 +18,13 @@
           </li>
         {% else %}
           <li class="page-item">
-            {% comment %} {% url 'router'%} {% endcomment %}
-            <a href="?page={{ page }} ">{{ page }}</a>
+            <a href="?page={{page}}" title="{{tuplas|index:forloop.counter0|index:3}}" >{{ page }}</a>
           </li>
         {% endif %}
     {% endfor %}
     {% if paginated.has_next %}
         <li class="page-item">
-          <a href="?page={{ paginated.next_page_number }}">&raquo;</a>
+          <a href="?page={{ paginated.next_page_number }}" title="Próximo">&raquo;</a>
         </li>
     {% else %}
         <li class="page-item">

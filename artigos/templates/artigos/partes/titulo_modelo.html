@@ -1,0 +1,31 @@
+{% load index %}
+<div class="container-titulo-modelo">
+    <div class="container-btn-previous-modelo">
+        {% if paginated.has_other_pages %}
+            {% if paginated.has_previous %}
+                {% with x=paginated.number|add:"-2" %}          
+                    <a class="btn-previous-active" href="?page={{ paginated.previous_page_number }}" title="{{tuplas|index:x|index:3}}">&laquo;</a>
+                {% endwith %}
+            {% else %}
+                <a class="btn-previous-disabled">&laquo;</a>
+            {% endif %}
+        {% endif %}   
+    </div>
+    <div>
+        {% with x=paginated.number|add:"-1" %}            
+            <h1 class="titulo-modelo">
+                {{tuplas|index:x|index:3}}
+            </h1>
+        {% endwith %}
+        
+    </div>
+    <div class="container-btn-next-modelo">
+        {% if paginated.has_other_pages %}
+            {% if paginated.has_next %}                  
+                <a class="btn-next-active" href="?page={{ paginated.next_page_number }}" title="{{tuplas|index:paginated.number|index:3}}">&raquo;</a>           
+            {% else %}
+                <a class="btn-next-disabled">&raquo;</a>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>

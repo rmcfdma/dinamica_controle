@@ -15,9 +15,9 @@
 <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
-          
-
-<h1>Pêndulo Cônico - 2ª Lei de Newton</h1> 
+{% with paginas as paginated %}
+  {% include 'artigos/partes/titulo_modelo.html' %}
+{% endwith %}
 
 <div class="figura_principal"> 
   <figure>
@@ -125,7 +125,7 @@ encontra-se os resultados das equações de \eqref{eqn:equacoes_a1_1} à \eqref{
 \end{align}
 </p>
 
-<p>A equação \eqref{eqn:equacoes_a1_1} define uma expressão para a tensão T, conforme a equação \eqref{}. 
+<p>A equação \eqref{eqn:equacoes_a1_1} define uma expressão para a tensão T, conforme a equação \eqref{eqn:T}. 
   \begin{align}
    T = m [\mathrm{g}\cos{\theta} + \ell(\dot{\phi}^2 \sin^2{\theta} + \dot{\theta}^2)] \label{eqn:T}\\
   \end{align}
