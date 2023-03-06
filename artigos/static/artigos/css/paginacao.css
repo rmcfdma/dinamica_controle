@@ -1,4 +1,4 @@
-
+/* Paginação do rodapé */
 .pagination{
     display: flex;
     flex-direction: row;
@@ -45,4 +45,53 @@ li:last-child > a{
 #active{
     background-color: #379683;
     color:  #EDF5E1;
+}
+
+/* Paginação do topo */
+
+.container-titulo-modelo{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+}
+
+.titulo-modelo{
+    width: 450px;
+
+}
+
+.container-btn-previous-modelo{
+    font-size: 100px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+}
+
+.container-btn-next-modelo{
+    font-size: 100px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+}
+
+.container-btn-previous-modelo  > a{
+    text-decoration: none;
+    display: block;  
+}
+
+.container-btn-next-modelo  > a{
+    text-decoration: none;
+    display: block;  
+}
+
+.btn-previous-active{
+    color: #379683;
+}
+.btn-previous-disabled{
+    color: darkgray;
+}
+.btn-next-active{
+    color: #379683;
+}
+.btn-next-disabled{
+    color: darkgray;
 }
