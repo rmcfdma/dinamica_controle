@@ -101,6 +101,31 @@ def modelagem_pendulo_conico_newton(request):
     context = {'paginas': paginas, 'total': total, 'tuplas': tuplas}
     return render(request,'artigos/modelagens/sistemas_rotacionais/' + tuplas[int(page)-1][2],context)
 
+def modelagem_pendulo_elastico_lagrange(request):
+    page = request.GET.get('page', 1)
+    tuplas = tuple(jsonToDict('sistemas_rotacionais.json'))
+    paginator = Paginator(tuplas, ITEMS_PER_PAGE)
+    total = paginator.count
+    try:
+        paginas = paginator.page(page)
+    except InvalidPage:
+        paginas = paginator.page(1)
+    context = {'paginas': paginas, 'total': total, 'tuplas': tuplas}
+    return render(request,'artigos/modelagens/sistemas_rotacionais/' + tuplas[int(page)-1][2],context)
+
+def modelagem_pendulo_elastico_newton(request):
+    page = request.GET.get('page', 1)
+    tuplas = tuple(jsonToDict('sistemas_rotacionais.json'))
+    paginator = Paginator(tuplas, ITEMS_PER_PAGE)
+    total = paginator.count
+    try:
+        paginas = paginator.page(page)
+    except InvalidPage:
+        paginas = paginator.page(1)
+    context = {'paginas': paginas, 'total': total, 'tuplas': tuplas}
+    return render(request,'artigos/modelagens/sistemas_rotacionais/' + tuplas[int(page)-1][2],context)
+
+
 def modelagem_pendulo_duplo(request):
     return render(request,'artigos/modelagens/sistemas_rotacionais/pendulo_duplo.html')
 
