@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block middle %} 
+<div class="conteudo">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
         MathJax = {
@@ -146,5 +147,5 @@ observado finalmente na equação \eqref{eqn:equacao_movimento_final}
 {% with paginas as paginated %}
     {% include 'artigos/partes/paginacao.html' %}
 {% endwith %}
-
+</div>
 {% endblock %}

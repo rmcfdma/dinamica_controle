@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block middle %} 
+<div class="conteudo">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
         MathJax = {
@@ -145,5 +146,5 @@ encontra-se os resultados das equações de \eqref{eqn:equacoes_a1_1} à \eqref{
   {% with paginas as paginated %}
     {% include 'artigos/partes/paginacao.html' %}
   {% endwith %}
-
+</div>
 {% endblock %}
