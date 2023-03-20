@@ -18,7 +18,8 @@
           </li>
         {% else %}
           <li class="page-item">
-            <a href="?page={{page}}" title="{{tuplas|index:forloop.counter0|index:3}}" >{{ page }}</a>
+            {% comment %} &tipo={{url|index:2}}&subsistema={{url|index:1}}&sistema={{url|index:0}} {% endcomment %}
+            <a href="{% url 'roteador' %}?page={{page}}&tipo={{url|index:2}}&subsistema={{url|index:1}}&sistema={{url|index:0}}" title="{{lista|index:forloop.counter0|index:3}}" >{{ page }}</a>
           </li>
         {% endif %}
     {% endfor %}

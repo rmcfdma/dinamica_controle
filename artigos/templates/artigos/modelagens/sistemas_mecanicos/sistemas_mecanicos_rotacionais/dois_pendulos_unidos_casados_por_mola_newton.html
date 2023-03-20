@@ -1,0 +1,38 @@
+{% extends 'artigos/home.html' %}
+
+{% load static %}
+
+{% block middle %} 
+<div class="conteudo">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        MathJax = {
+          tex: {
+            tags: 'ams'  // should be 'ams', 'none', or 'all'
+          }
+        };
+  </script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+	
+{% with paginas as paginated %}
+	{% include 'artigos/partes/titulo_modelo.html' %}
+{% endwith %}
+
+<div class="figura_principal"> 
+	<figure>
+	  <img src="{% static 'artigos/img/svgs/dois_pendulos_unidos_casados_por_mola.svg' %}"/>
+	  <figcaption class="label_figure">Fig.1 Dois Pêndulos Unidos Casados por Mola.</figcaption>
+	</figure>
+</div>
+
+<p>
+    Em contrução
+</p>
+
+{% with paginas as paginated %}
+    {% include 'artigos/partes/paginacao.html' %}
+{% endwith %}
+</div>
+{% endblock %}

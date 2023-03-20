@@ -1,0 +1,65 @@
+{% extends 'artigos/home.html' %}
+{% load static %}
+{% load index %}
+
+{% block middle %} 
+<link rel="stylesheet" href="{% static 'artigos/css/treeview.css' %}">
+  
+<h1>Sistemas {{name}}</h1>
+
+{% comment %} 
+  Exemplo de sistema armazenado no arquivo sistema.json:
+  'Mecânico': { 'id':1,
+                'Rotacionais':{ 
+                    'Pêndulos': [
+                        [1,'Pêndulo Simples', [[metodo1,url1],
+                                               [metodo2,url2]]
+                                ]
+                              }
+              } 
+{% endcomment %}
+
+<ul>
+  {% comment %} Itera sobre os subsitemas. Ex: Rotacionais {% endcomment %}
+  {% for k, m in subsistemas.items %} 
+    {% comment %} Retira os valores de url e id {% endcomment %}
+    {% if k != 'url' and k != 'id' %}
+    <li>
+      <details>
+      <summary class="super_lista">{{k}}</summary>
+        <ul>
+          {% comment %} Itera sobre os tipos de modelos. Ex. Pêndulos {% endcomment %}
+          {% for i, n in m.items %}
+          {% comment %} Retira os valores de url {% endcomment %}
+            {% if i != 'url'  %}
+              <li>
+                <details> 
+                <summary class="lista">{{i}}</summary>   
+                  <ul>
+                    {% comment %} Itera sobre os modelos. Ex. Pêndulo Simples {% endcomment %}
+                    {% for a in n %}
+                    <li>
+                        <details> 
+                        <summary class="lista">{{a|index:1}}</summary>   
+                          <ol>
+                              {% comment %} Itera sobre os métodos de resolução. Ex. Lagrange e Newton {% endcomment %}
+                              {% for g in a|index:2 %}
+                                <li><a href="{% url 'roteador'%}?page={{g|index:0}}&modelo={{a|index:0}}&tipo={{i}}&subsistema={{k}}&sistema={{name}}">{{g|index:4}}</a></li>
+                              {% endfor %}
+                          </ol>
+                        </details>
+                    </li>
+                    {% endfor %}  
+                  </ul>
+                </details>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </details>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endblock %}
+    

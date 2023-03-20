@@ -1,0 +1,169 @@
+{% extends 'artigos/home.html' %}
+
+{% load static %}
+
+{% block middle %} 
+<div class="conteudo">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        MathJax = {
+          tex: {
+            tags: 'ams'  // should be 'ams', 'none', or 'all'
+          }
+        };
+  </script>
+
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+{% with paginas as paginated %}
+  {% include 'artigos/partes/titulo_modelo.html' %}
+{% endwith %} 
+
+<div class="figura_principal"> 
+  <figure>
+    <img src="{% static 'artigos/img/svgs/pendulo_conico.svg' %}"/>
+    <figcaption class="label_figure">Fig.1 Pêndulo cônico.</figcaption>
+  </figure>
+</div>
+
+<p>Neste artigo serão deduzidas as equações de movimento 
+  do pêndulo cônico através das Equações de Lagrange.</p>
+
+<p>Este dispositivo possui apenas dois graus de liberdade,
+  consequentemente duas coordenadas generalizadas \(\theta\) e \(\phi\)
+  pois, embora sua trajetória ocorra em três dimensões,
+  o vínculo trigonométrico exercido pela haste reduz o
+  número de graus de liberdade do sistema de três para dois.</p>
+
+<p>A equação \eqref{eqn:lagrangiana_definicao} refere-se à Função Lagrangiana que será, oportunamete,
+  utilizada nas Equações de Lagrange.
+
+
+    \begin{equation} \label{eqn:lagrangiana_definicao}
+      L = T-V
+    \end{equation}
+    
+    onde \(L\) é igual à diferença entre a energia cinética \(T\) e a energia potencial \(V\).</p>
+    
+
+<p> Em seguida temos as Equações de Lagrange apresentadas, respectivamente, através das equações \eqref{eqn:equacao_de_lagrange_theta}, para a coordenada generalizada  \(\theta\)  e \eqref{eqn:equacao_de_lagrange_phi}, para a coordenada generalizada  \(\phi\).
+
+  \begin{align} 
+	  \frac{d}{dt} \left(\frac{\partial L}{\partial \dot{\theta}}\right) - \frac{\partial L}{\partial \theta} & = 0 \label{eqn:equacao_de_lagrange_theta}\\
+    \frac{d}{dt} \left(\frac{\partial L}{\partial \dot{\phi}}\right) - \frac{\partial L}{\partial \phi} & = 0 \label{eqn:equacao_de_lagrange_phi}
+  \end{align}	
+</p>
+
+<p> No lado direito das equações  \eqref{eqn:equacao_de_lagrange_theta} e \eqref{eqn:equacao_de_lagrange_phi}, os termos \(-b \dot{\theta}\) e \(-b \dot{\phi}\) representam forças de amortecimento contrárias ao movimento, respectivamente, em \(\theta\) e \(\phi\). </p>
+	
+<p>	Estas forças fazem com que o pêndulo perca energia cinética tornando o sistema 
+	não-conservativo e faz com que o pêndulo não oscile
+	infinitamente recebendo, por esse motivo, o sinal negativo.</p>
+
+<p> Na equação \eqref{eqn:posicao_velocidade} é possível observar as componentes em \(x\), \(y\) e em \(z\) do vetor posição do ponto \(Q\) com repeito ao ponto \(O\) e suas derivadas \(\dot{x}\), \(\dot{y}\) e \(\dot{z}\) em relação ao referencial inercial R, que representam as componentes do vetor velocidade linear, que 
+    é tengente à trajetória do pêndulo sendo, portanto, perpendicular ao eixo da haste no sentido da trajetória.
+  
+  \begin{equation}\label{eqn:posicao_velocidade}
+    \begin{array}{l l}
+      x = \ell \sin{\theta}\cos{\phi} & \dot{x} = \ell (\dot{\theta}\cos{\theta}\cos{\phi} - \dot{\phi}\sin{\theta}\sin{\phi}) \\
+      y = \ell \cos{\theta}\sin{\phi} & \dot{y} = \ell (\dot{\theta}\cos{\theta}\sin{\phi} + \dot{\phi}\sin{\theta}\cos{\phi}) \\
+      z = - \ell \cos(\theta)         & \dot{z} = \ell \dot{\theta} \sin{\theta} \\
+    \end{array}
+  \end{equation}	
+
+  <p>A energia cinética T do pêndulo é dada pela equação \eqref{eqn:energia_cinetica_expandida_1},
+     e substituindo as velocidades encontradas na equação \eqref{eqn:posicao_velocidade} na equação \eqref{eqn:energia_cinetica_expandida_1}, 
+     isolando \(\ell^2\), \(\dot{\theta}^2\cos^2{\theta}\), \(\dot{\phi}^2\sin^2{\theta}\), cancelando os termos \(2 \ell^2 \dot{\theta} \dot{\phi} \cos{\theta}\sin{\phi}\sin{\theta}\cos{\phi}\) e utilizando a identidade trigonométrica \(\cos^2{x}+\sin^2{x} = 1\), obtém-se os
+     resultados das equações de \eqref{eqn:energia_cinetica_expandida_2} a \eqref{eqn:energia_cinetica_expandida_4}. 
+
+
+  \begin{align} 
+    & \begin{split}  
+      T = {} & \frac{1}{2} m (\dot{x}^2 + \dot{y}^2 + \dot{z}^2) \\
+      \end{split} \label{eqn:energia_cinetica_expandida_1}\\[2ex]
+    & \begin{split} 
+      T = {} & \frac{1}{2} m ( \ell^2 \dot{\theta}^2 \cos^2{\theta}\cos^2{\phi} - 2 \ell^2 \dot{\theta} \dot{\phi} \cos{\theta}\cos{\phi}\sin{\theta}\sin{\phi}\\
+             & + \ell^2 \dot{\phi}^2 \sin^2{\theta}\sin^2{\phi} + \ell^2 \dot{\theta}^2 \cos^2{\theta}\sin^2{\phi}   \\
+             & + 2 \ell^2 \dot{\theta} \dot{\phi} \cos{\theta}\sin{\phi}\sin{\theta}\cos{\phi} + \ell^2 \dot{\phi}^2 \sin^2{\theta}\cos^2{\phi} + \ell^2 \dot{\theta}^2 \sin^2{\theta})
+      \end{split} \label{eqn:energia_cinetica_expandida_2} \\[2ex]
+    & \begin{split} 
+      T = {} & \frac{1}{2} m \ell^2 [(\dot{\theta}^2 \cos^2{\theta}(\cos^2{\phi} + sin^2{\phi})\\ 
+                                  &  +(\dot{\phi}^2 \sin^2{\theta}(\cos^2{\phi} + sin^2{\phi})\\
+                                  &  +\dot{\theta}^2 \sin^2{\theta}]
+      \end{split} \label{eqn:energia_cinetica_expandida_3} \\[2ex]
+    & \begin{split} 
+      T = {} & \frac{1}{2} m \ell^2 (\dot{\theta}^2 \cos^2{\theta} + \dot{\phi}^2 \sin^2{\theta} + \dot{\theta}^2 \sin^2{\theta})
+      \end{split} \label{eqn:energia_cinetica_expandida_4}
+  \end{align}
+</p>
+
+  <p>Isolando \( \dot{\theta^2}\) e utilizando novamente a identidade trigonométrica anterior de forma que \(\cos^2{\theta} + \sin^2{\theta} = 1\),
+     obtém-se uma expressão para a energia cinética que pode ser vista na equação \eqref{eqn:energia_cinetica_final}.
+
+  \begin{align}
+     T = \frac{1}{2}m \ell^2 \dot{\theta^2} + \frac{1}{2}m \ell^2 \dot{\phi}^2 \sin^2{\theta} \label{eqn:energia_cinetica_final}
+  \end{align}</p>
+
+  <p>Para a energia potencial V verificou-se que:
+    \begin{align}
+      V = m\mathrm{g}h = -m \mathrm{g}\ell \cos{\theta} \label{eqn:energia_potencial}
+    \end{align}
+  </p>
+
+  <p>Vale ressaltar que, além de considerar R como referencial inercial, o nível de potencial 0 foi posicionado na linha horizontal que passa pelo ponto O,
+     fazendo com que a altura \(h\), no termo \(m \mathrm{g}h\) de \(V\), passe a ser uma quantidade negativa, onde \(h = -\ell\cos{\theta}\), conforme pode
+     ser visto na equação \eqref{eqn:energia_potencial}.
+  </p>
+
+  <p>Substituindo as expressões de \(T\) e \(V\) obtidas, respectivamente, em \eqref{eqn:energia_cinetica_final} 
+    e \eqref{eqn:energia_potencial} na equação \eqref{eqn:lagrangiana_definicao}, obtém-se a Função Lagrangiana da equação \eqref{eqn:lagrangiana_calculada}.
+  
+  \begin{equation}\label{eqn:lagrangiana_calculada}	
+    L = \frac{1}{2}m \ell^2 \dot{\theta^2} + \frac{1}{2}m \ell^2 \dot{\phi}^2 \sin^2{\theta} + m \mathrm{g}\ell \cos{\theta}
+  \end{equation} </p>
+
+  <p>De posse da lagrangiana é possível obter as equações diferenciais que regem o movimento pendular submetendo-a às aquações \eqref{eqn:equacao_de_lagrange_theta} e \eqref{eqn:equacao_de_lagrange_phi}.
+     calculando cada termo separadamente, como pode ser analisado nas equações de \eqref{eqn:lagrange_1} à \eqref{eqn:lagrange_6}, obtém-se os seguintes resultados.</p>
+
+  <p> Para a coordenada generalizada \(\theta\):
+    \begin{align}
+      \frac{\partial L}{\partial \dot{\theta}} & = m \ell^2 \dot{\theta} \label{eqn:lagrange_1} \\[1em]
+      \frac{d}{dt} \left(\frac{\partial L}{\partial \dot{\theta}}\right) & = m \ell^2 \ddot{\theta} \label{eqn:lagrange_2} \\[1em]
+      \frac{\partial L}{\partial \theta} & = m \ell^2 \dot{\phi}^2 \sin{\theta}\cos{\theta} - m\mathrm{g}\ell\sin{\theta} \label{eqn:lagrange_3} 
+    \end{align}
+  </p>
+  
+  <p> Para a coordenada generalizada \(\phi\):
+    \begin{align}
+      \frac{\partial L}{\partial \dot{\phi}} & = m \ell^2 \dot{\phi} \sin^2{\theta} \label{eqn:lagrange_4} \\[1em]
+      \frac{d}{dt} \left(\frac{\partial L}{\partial \dot{\phi}}\right) & = m \ell^2 (\ddot{\phi} \sin^2{\theta} + 2 \dot{\theta}\dot{\phi} \cos{\theta} \sin{\theta}) \label{eqn:lagrange_5} \\[1em]
+      \frac{\partial L}{\partial \phi} & = 0 \label{eqn:lagrange_6} 
+    \end{align}
+  </p>
+
+  <p>Substituindo os termos encontrados nas equações de \eqref{eqn:lagrange_1} à \eqref{eqn:lagrange_6} nas equações \eqref{eqn:equacao_de_lagrange_theta} e \eqref{eqn:equacao_de_lagrange_theta}
+     são obtidas as equeções \eqref{eqn:equacao_movimento_theta} e \eqref{eqn:equacao_movimento_phi}
+    \begin{align} 
+      m \ell^2 \ddot{\theta} - m \ell^2 \dot{\phi}^2  \cos{\theta}\sin{\theta} + m \mathrm{g} \ell \sin{\theta} & = -b\dot{\theta} \label{eqn:equacao_movimento_theta}\\
+      m \ell^2 \ddot{\phi}\sin^2{\theta} + 2m \ell^2 \dot{\theta}\dot{\phi}  \cos{\theta}\sin{\theta} & = -b\dot{\phi} \label{eqn:equacao_movimento_phi}  
+    \end{align}  
+  </p>
+    
+ que simplificando fica:
+
+  \begin{align} 
+      \ddot{\theta} - \dot{\phi}^2 \cos{\theta}\sin{\theta} + \frac{\mathrm{g}}{\ell}  \sin{\theta} & = -b\dot{\theta} \label{eqn:equacao_movimento_theta_simplificada}\\
+      \ddot{\phi}\sin{\theta} + 2 \dot{\theta}\dot{\phi}  \cos{\theta} & = -b\dot{\phi} \label{eqn:equacao_movimento_phi_simplificada}  
+  \end{align}  
+
+<p>Obs.: Uma observação importante a ser feita sobre esses resultados é que, caso \(\phi\) seja nulo, 
+  estas equações transformam-se na equação do pêndulo simples. Confira! </p>
+
+  {% with paginas as paginated %}
+    {% include 'artigos/partes/paginacao.html' %}
+  {% endwith %}
+</div>
+{% endblock %}

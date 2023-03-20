@@ -1,0 +1,150 @@
+{% extends 'artigos/home.html' %}
+
+{% load static %}
+
+{% block middle %} 
+<div class="conteudo">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        MathJax = {
+          tex: {
+            tags: 'ams'  // should be 'ams', 'none', or 'all'
+          }
+        };
+  </script>
+
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+{% with paginas as paginated %}
+  {% include 'artigos/partes/titulo_modelo.html' %}
+{% endwith %}
+
+<div class="figura_principal"> 
+  <figure>
+    <img src="{% static 'artigos/img/svgs/pendulo_conico.svg' %}"/>
+    <figcaption class="label_figure">Fig.1 Pêndulo simples.</figcaption>
+  </figure>
+</div>
+
+<p>Neste artigo serão deduzidas as equações diferenciais que regem o movimento do Pêndulo Cônico utilizando a 2ª Lei de Newton, onde:
+
+  \begin{align} \label{eqn:forca_resultante}
+    \boldsymbol{F_{Res}} = m\boldsymbol{a}
+  \end{align} 
+
+</p>
+
+<p>Na equação \eqref{eqn:forca_resultante}, \(\boldsymbol{F_{Res}}\) é a força resultante
+   que pode ser entendida como o soma vetorial das forças que agem sobre o sistema
+   e \(\boldsymbol{a}\) é a aceleração do ponto Q em relação ao referencial R.
+</p>
+
+<p>Para fins de convenção, neste artigo, todos os elementos que correspondem a vetores estarão em negrito.
+
+<p>Na figura acima, R é o referencial inercial com coordenadas \(x,y\) e \(z\), 
+   o refenrencial B é plano imaginário que acompanha o pêndulo em relação ao ângulo
+   \(\phi\) e possui uma base fixa \(\{\mathbf{b_1},\mathbf{b_2},\mathbf{b_3}\}\) e o referencial A
+  é a esfera do pêndulo onde foi posicionada uma base \(\{\mathbf{a_1},\mathbf{a_1},\mathbf{a_1} \}\)</p>
+
+<p>Vale ressaltar que como os vetores das bases fixas em A e B são unitários e ortogonais, são válidas as afirmações das equações \eqref{eqn:a3_b3} e \eqref{eqn:-b1}. 
+  
+  \begin{align} 
+  \boldsymbol{b_3} & = \boldsymbol{a_3} \label{eqn:a3_b3}\\[1em]
+  -\boldsymbol{b_1} & = -\cos{\theta}\boldsymbol{a_1} + \sin{\theta}\boldsymbol{a_2} \label{eqn:-b1}
+  \end{align} 
+</p> 
+
+<p>Realizando uma análise do movimento, é possível notar que os vetores da base fixa em A
+  variam em relação ao referencial B que, por sua vez, também possui uma base fixa que varia
+  em relação ao referencial R. 
+</p>
+
+<p>Sendo assim, para o cálculo da derivada dos vetores das bases, é necessário calcular o vetor \(^B\boldsymbol{\omega}^A\), que representa a velocidade angular do referencial A em relação ao referencial B
+  e o vetor \(^R\boldsymbol{\omega}^B\), que representa a velocidade angular do referencial B em relação ao referencial R para obter-se a velocidade angular de A em R, representada por \(^R\boldsymbol{\omega}^A\).
+</p>
+
+<p>Sendo assim são válidas as equações de \eqref{eqn:r_omega_b} à \eqref{eqn:r_omega_a}.
+  \begin{align} 
+    ^R\boldsymbol{\omega}^B & = -\boldsymbol{\dot{\phi}}\boldsymbol{b_1} = \dot{\phi} (-\cos{\theta}\boldsymbol{a_1} + \sin{\theta}\boldsymbol{a_2}) \label{eqn:r_omega_b}\\
+    ^B\boldsymbol{\omega}^A & = \dot{\theta}\boldsymbol{a_3} \label{eqn:b_omega_a} \\
+    ^R\boldsymbol{\omega}^A & = \, ^R\boldsymbol{\omega}^B + ^B\boldsymbol{\omega}^A \label{eqn:r_omega_b_mais_b_omega_a}\\
+    ^R\boldsymbol{\omega}^A & = -\dot{\phi} \cos{\theta}\boldsymbol{a_1} + \dot{\phi} \sin{\theta}\boldsymbol{a_2} + \dot{\theta}\boldsymbol{a_3} \label{eqn:r_omega_a}
+  \end{align} 
+</p>
+
+<p>
+  Assim é possível calcular a derivada dos vetores da base em A em relação a R, conforme pode ser visto nas equações de \eqref{eqn:dot_a_1_0} à \eqref{eqn:dot_a_3}.
+  \begin{align}
+      \,^R\dot{a}_1 & = \, ^R\boldsymbol{\omega}^A \times \boldsymbol{a_1} = (-\dot{\phi} \cos{\theta}\boldsymbol{a_1} + \dot{\phi} \sin{\theta}\boldsymbol{a_2} + \dot{\theta}\boldsymbol{a_3}) \times \boldsymbol{a_1} \label{eqn:dot_a_1_0}\\
+      \,^R\dot{a}_1 & = - \dot{\phi}\sin{\theta}\boldsymbol{a_3} + \dot{\theta}\boldsymbol{a_2}  \label{eqn:dot_a_1}\\
+      \,^R\dot{a}_2 & = \, ^R\boldsymbol{\omega}^A \times \boldsymbol{a_2} = (-\dot{\phi} \cos{\theta}\boldsymbol{a_1} + \dot{\phi} \sin{\theta}\boldsymbol{a_2} + \dot{\theta}\boldsymbol{a_3}) \times \boldsymbol{a_2} \\
+      \,^R\dot{a}_2 & = -\dot{\phi} \cos{\theta}\boldsymbol{a_3} - \dot{\theta} \boldsymbol{a_1} \label{eqn:dot_a_2} \\
+      \,^R\dot{a}_3 & = \, ^R\boldsymbol{\omega}^A \times \boldsymbol{a_3} = (-\dot{\phi} \cos{\theta}\boldsymbol{a_1} + \dot{\phi} \sin{\theta}\boldsymbol{a_2} + \dot{\theta}\boldsymbol{a_3}) \times \boldsymbol{a_3} \\
+      \,^R\dot{a}_3 & = \dot{\phi} \cos{\theta} \boldsymbol{a_2} + \dot{\phi}\sin{\theta} \boldsymbol{a_1} \label{eqn:dot_a_3}
+  \end{align}
+</p>
+
+<p>Com os resultados acima, agora, é possível calcular a primeira e a segunda derivada, em relação a R, do vetor posição \(\boldsymbol{P}\) do ponto 
+   Q com respeito ao ponto O. 
+   
+   \begin{align}
+      \boldsymbol{P}^{Q/O} & = \ell\boldsymbol{a_1} \\
+      ^R\dot{\boldsymbol{P}}^{Q/O} & = \,^R\boldsymbol{v}^Q =\ell \dot{\boldsymbol{a}}_\boldsymbol{1} = -\ell \dot{\phi} \sin{\theta} \boldsymbol{a_3} + \ell \dot{\theta} \boldsymbol{a_2}\\
+      ^R\ddot{\boldsymbol{P}}^{Q/O} & = \,^R\boldsymbol{a}^Q = -\ell [(\ddot{\phi} \sin{\theta} + \dot{\theta}\dot{\phi}) \boldsymbol{a_3} + \dot{\phi} \sin{\theta}  \dot{\boldsymbol{a}}_\boldsymbol{3}] + \ell(\ddot{\theta}\boldsymbol{a_2} + \dot{\theta}  \dot{\boldsymbol{a}}_\boldsymbol{2}) \label{eqn:a_1}
+   \end{align}
+</p>
+
+<p>Substituindo as derivadas em relação a R dos vetores unitários obtidas nas equações de \eqref{eqn:dot_a_1_0} à \eqref{eqn:dot_a_3}
+   na expressão do vetor aceleração linear da equação \eqref{eqn:a_1} e separando os termos, chega-se a uma expressão
+   final para a aceleração, conforme a equação \eqref{eqn:a_final}.
+   
+   \begin{align}
+      \begin{split} 
+          ^R\boldsymbol{a}^Q = {} & -\ell(\dot{\phi}^2 \sin^2{\theta} + \dot{\theta}^2)\boldsymbol{a_1} \\
+                                  & + \ell(\ddot{\theta} - \dot{\phi}^2 \sin{\theta}\cos{\theta})\boldsymbol{a_2}\\
+                                  & + \ell(\ddot{\phi}\sin{\theta} + 2\dot{\theta}\dot{\phi}\cos{\theta})\boldsymbol{a_3} 
+      \end{split} \label{eqn:a_final}
+   \end{align}
+</p>
+  
+<p>Ao analizar as forças que agem sobre a esfera tem-se que:
+  \begin{align}
+      m\mathrm{g}\cos{\theta} - T & = ma_{\boldsymbol{a_1}} \label{eqn:equacoes_a1}\\
+      m\mathrm{g}\cos{\theta}  & = ma_{\boldsymbol{a_2}}\label{eqn:equacoes_a2}\\
+      0 & = ma_{\boldsymbol{a_3}} \label{eqn:equacoes_a3}
+  \end{align}
+</p>
+
+<p>Substituindo as componentes de \(^R\boldsymbol{a}^Q\) obtidas na equação \eqref{eqn:a_final}
+nas equações referente à aplicação da 2ª lei de Newtom obtidas nas equações de \eqref{eqn:equacoes_a1} à \eqref{eqn:equacoes_a3},
+encontra-se os resultados das equações de \eqref{eqn:equacoes_a1_1} à \eqref{eqn:equacoes_a3_1}.
+\begin{align}
+    m\mathrm{g}\cos{\theta} - T & = -m \ell(\dot{\phi}^2 \sin^2{\theta} + \dot{\theta}^2) \label{eqn:equacoes_a1_1}\\
+    -m\mathrm{g}\cos{\theta}  & = m \ell(\ddot{\theta} - \dot{\phi}^2 \sin{\theta}\cos{\theta})   \label{eqn:equacoes_a2_1}\\
+    0 & = m \ell(\ddot{\phi}\sin{\theta} + 2\dot{\theta}\dot{\phi}\cos{\theta}) \label{eqn:equacoes_a3_1}
+\end{align}
+</p>
+
+<p>A equação \eqref{eqn:equacoes_a1_1} define uma expressão para a tensão T, conforme a equação \eqref{eqn:T}. 
+  \begin{align}
+   T = m [\mathrm{g}\cos{\theta} + \ell(\dot{\phi}^2 \sin^2{\theta} + \dot{\theta}^2)] \label{eqn:T}\\
+  \end{align}
+</p>
+
+<p>E as equações \eqref{eqn:equacoes_a2_1} e \eqref{eqn:equacoes_a3_1} são as equações de movimento propriamente ditas, que 
+  após algumas simplificações obtém-se, finalmente, o formato desejada. 
+  \begin{align} 
+      \ddot{\theta} - \dot{\phi}^2 \cos{\theta}\sin{\theta} + \frac{\mathrm{g}}{\ell}  \sin{\theta} & = -b\dot{\theta} \label{eqn:equacao_movimento_theta_simplificada}\\
+      \ddot{\phi}\sin{\theta} + 2 \dot{\theta}\dot{\phi}  \cos{\theta} & = -b\dot{\phi} \label{eqn:equacao_movimento_phi_simplificada}  
+  \end{align}
+</p>
+
+<p>Obs.: Uma observação importante a ser feita sobre esses resultados é que, caso \(\phi\) seja nulo, 
+  estas equações transformam-se na equação do pêndulo simples. Confira! </p>
+
+  {% with paginas as paginated %}
+    {% include 'artigos/partes/paginacao.html' %}
+  {% endwith %}
+</div>
+{% endblock %}

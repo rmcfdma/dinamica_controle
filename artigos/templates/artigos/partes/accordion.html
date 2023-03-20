@@ -1,4 +1,4 @@
-
+{% load index %}
 <div class="espaco">
 </div>
 <div class="accordion-wrapper">
@@ -9,9 +9,9 @@
     <input class="input" type="radio" name="radio-a" id="check1">
     <label class="accordion-label" for="check1">Modelagem</label>
     <div class="accordion-content">
-      <p><a class="link_interno" href="{% url 'modelagem_sistemas_translacionais' %}">Sistemas Translacionais</a></p>
-      <p><a class="link_interno" href="{% url 'modelagem_sistemas_rotacionais' %}">Sistemas Rotacionais</a></p>
-      <p><a class="link_interno" href="{% url 'modelagem_sistemas_hibridos' %}">Sistemas Híbridos</a></p>
+      {% for sistema in sistemas %}
+        <p><a class="link_interno" href="{% url 'sistema_detalhes' %}?id={{sistema|index:0}}">Sistemas {{sistema|index:1}}</a></p>
+      {% endfor %}  
     </div>
   </div>
   <div class="accordion">
