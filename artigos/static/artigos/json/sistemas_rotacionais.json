@@ -1,8 +1,0 @@
-[
-   [1, "modelagem_pendulo_simples_lagrange", "pendulo_simples_lagrange.html", "Pêndulo Simples - Lagrange"],
-   [2, "modelagem_pendulo_simples_newton", "pendulo_simples_newton.html", "Pêndulo Simples - Newton"],
-   [3, "modelagem_pendulo_conico_lagrange", "pendulo_conico_lagrange.html", "Pêndulo Cônico - Lagrange"],
-   [4, "modelagem_pendulo_conico_newton", "pendulo_conico_newton.html", "Pêndulo Cônico - Newton"],
-   [5, "modelagem_pendulo_elastico_lagrange", "pendulo_elastico_lagrange.html", "Pêndulo Elástico - Lagrange"],
-   [6, "modelagem_pendulo_elastico_newton", "pendulo_elastico_newton.html", "Pêndulo Elástico - Newton"]
-]
