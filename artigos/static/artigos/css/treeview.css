@@ -8,10 +8,12 @@
 }
 summary{
     cursor: pointer;
+    width: 250px;
 }
 
 details > summary {
     list-style-type: '+  ';
+    width: 350px;
 }
 
 details[open] > summary {
@@ -22,6 +24,7 @@ details[open] > summary {
 summary::marker{
     font-size: 1.5em;
     padding-right: 10px;
+    color:#FF6600
 }
 
 details[open] {
@@ -37,6 +40,7 @@ ol > li{
     list-style-type: none;
     display: flex;
     align-items: center;
+    color:#FF6600
 }
 
 ol > li:before {
@@ -44,4 +48,17 @@ ol > li:before {
     font-size: 1.5em;
     margin-right: 10px;
   }
+
+  li > a{
+    text-decoration: none;
+    color: #379683;
+}
+
+li > a:visited{
+    color:yellowgreen
+}
+
+li > a:hover{
+    color:#FF6600
+}
 

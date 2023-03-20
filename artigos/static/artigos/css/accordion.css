@@ -10,7 +10,7 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
-  width: 230px;
+  width: 245px;
   margin:0 auto;
   top: 30px;
 }
@@ -44,6 +44,10 @@
   cursor: pointer;
   font-size: 18px;
 
+}
+
+.link_interno:hover{
+  color:#FF6600;
 }
 .accordion:last-child{
   margin-bottom: 0;
